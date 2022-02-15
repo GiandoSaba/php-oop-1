@@ -1,6 +1,7 @@
 <?php
 
-class Movie {
+class Movie
+{
     public $title;
     public $originalTitle;
     public $language;
@@ -189,8 +190,38 @@ class Movie {
     }
 };
 
-$movie = new Movie('Eternals', 'it_IT', 200000000);
-$movie->setOriginalTItle('Eternals');
-$movie->setGenres(['Azione', 'Avventura', 'Fantasy', 'Fantascienza']);
+$movieFirst = new Movie('Eternals', 'it_IT', 200000000);
+$movieFirst->setOriginalTItle('Eternals');
+$movieFirst->setGenres(['Azione', 'Avventura', 'Fantasy', 'Fantascienza']);
 
-var_dump($movie);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>TITOLO: <?= $movieFirst->title ?></li>
+            <li>LINGUA: <?= $movieFirst->language ?></li>
+            <li>BUDGET: <?= $movieFirst->budget ?></li>
+            <li>TITOLO ORIGINALE: <?= $movieFirst->originalTitle ?></li>
+            <li> GENERI:
+                <ul>
+                    <?php foreach ($movieFirst->genres as $genre) : ?>
+                        <li><?= $genre['name'] ?></li>
+                    <?php endforeach ?>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
