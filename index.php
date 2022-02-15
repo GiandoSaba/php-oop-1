@@ -189,6 +189,8 @@ class Movie {
     }
 };
 
-$movie = new Movie('Etrnals', 'it_IT', 200000000);
+$movie = new Movie('Eternals', 'it_IT', 200000000);
+$movie->setOriginalTItle('Eternals');
+$movie->setGenres(['Azione', 'Avventura', 'Fantasy', 'Fantascienza']);
 
 var_dump($movie);
